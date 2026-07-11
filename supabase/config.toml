@@ -1,0 +1,31 @@
+project_id = "rruwxmfanmrhicfcoenx"
+
+[functions.send-notification]
+verify_jwt = false
+
+[functions.blog-admin]
+verify_jwt = false
+
+[functions.admin-data]
+verify_jwt = false
+
+[functions.get-signed-url]
+verify_jwt = false
+
+[functions.manage-staff]
+verify_jwt = false
+
+[functions.ai-feedback]
+verify_jwt = false
+
+[functions.student-chat]
+verify_jwt = false
+
+[functions.create-checkout]
+verify_jwt = false
+
+[functions.verify-payment]
+verify_jwt = false
+
+[functions.paystack-webhook]
+verify_jwt = false

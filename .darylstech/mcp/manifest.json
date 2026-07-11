@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "sdk_version": "0.20.0",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "dten-mcp",
+      "version": "0.1.0",
+      "title": "Daryl Tech Educational Network"
+    },
+    "tools": [
+      {
+        "name": "list_blog_posts",
+        "title": "List blog posts",
+        "description": "List published blog posts from Daryl Tech Educational Network.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "limit": {
+              "description": "Max posts to return (default 10).",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            },
+            "category": {
+              "description": "Filter by category.",
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_blog_post",
+        "title": "Get blog post",
+        "description": "Fetch the full content of a single published blog post by id.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$",
+              "description": "Blog post id."
+            }
+          },
+          "required": [
+            "id"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "verify_certificate",
+        "title": "Verify certificate",
+        "description": "Verify a DTEN certificate by enrollment ID (starts with DTEN-).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "enrollment_id": {
+              "type": "string",
+              "minLength": 3,
+              "description": "Enrollment ID, e.g. DTEN-XXXX."
+            }
+          },
+          "required": [
+            "enrollment_id"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "submit_internship_application",
+        "title": "Submit internship application",
+        "description": "Submit an internship application to Daryl Tech Educational Network.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "full_name": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 100
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+            },
+            "phone": {
+              "type": "string",
+              "maxLength": 30
+            },
+            "track": {
+              "type": "string",
+              "minLength": 2,
+              "description": "Desired internship track (e.g. Web Development)."
+            },
+            "experience_level": {
+              "type": "string",
+              "description": "Beginner, Intermediate, or Advanced."
+            },
+            "portfolio_url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "motivation": {
+              "type": "string",
+              "minLength": 20,
+              "maxLength": 1500,
+              "description": "Why you want this internship."
+            }
+          },
+          "required": [
+            "full_name",
+            "email",
+            "track",
+            "experience_level",
+            "motivation"
+          ]
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}

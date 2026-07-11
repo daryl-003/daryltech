@@ -1,0 +1,1 @@
+ALTER TABLE public.task_submissions ADD COLUMN due_date date DEFAULT NULL;
