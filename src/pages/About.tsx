@@ -239,10 +239,10 @@ const About = () => {
               className="lg:col-span-3"
             >
               <p className="mb-2 text-sm font-mono uppercase tracking-widest text-primary">Leadership</p>
-              <h2 className="mb-2 text-3xl font-bold md:text-4xl">Stephen Darryl Osei Boateng Junior</h2>
+              <h2 className="mb-2 text-3xl font-bold md:text-4xl">Darryl Thompson</h2>
               <p className="mb-6 text-sm font-mono text-primary">Founder & Chief Executive Officer</p>
               <p className="mb-6 text-muted-foreground leading-relaxed">
-                With over 5 years of experience in technology leadership, Darryl founded Daryl Tech & Educational Network as a subset of Daryls Tech LLC with a vision to bridge the gap between cutting-edge technology and everyday business needs. His background includes engineering leadership roles at Fortune 500 companies, where he led teams of 50+ engineers building mission-critical systems.
+                With over 5 years of experience in technology leadership, Darryl founded Daryl Tech & Educational Network with a vision to bridge the gap between cutting-edge technology and everyday business needs. His background includes engineering leadership roles at Fortune 500 companies, where he led teams of 50+ engineers building mission-critical systems.
               <p className="mb-8 text-muted-foreground leading-relaxed">
                 Under his guidance, Daryls Tech has delivered 10+ projects, generating over $50M in client revenue. Darryl is also a keynote speaker at major tech conferences and an advisor to multiple startups.
               </p>
